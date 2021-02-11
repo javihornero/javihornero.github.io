@@ -3,6 +3,10 @@
   "homepage": "https://javihornero.github.io",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.14.8",
+    "node": "14.15.1"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
