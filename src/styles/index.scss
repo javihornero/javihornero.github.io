@@ -1,0 +1,80 @@
+@import "colors";
+@import "variables";
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", "Roboto", sans-serif;
+  min-height: 100vh;
+  letter-spacing: 1px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 5px; //vertical bar
+  height: 5px; //horizontal bar
+  &-track {
+    background: black;
+  }
+  &-thumb {
+    background: #fff;
+  }
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: $footer-height;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+  @include lightTheme {
+    background-color: $lighter-grey;
+  }
+}
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  background: $bg-color;
+  padding-top: 90px;
+  color: white;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  @include lightTheme() {
+    background: $bg-color-light;
+    color: black;
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 950px;
+  height: 100%;
+  padding: 0 2rem calc(#{$footer-height} + 30px);
+}
+
+@include breakpoint-down("small") {
+  .content-wrapper {
+  }
+}

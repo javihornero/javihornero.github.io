@@ -1,0 +1,29 @@
+@import "styles/variables";
+@import "styles/mixins";
+@import "styles/animations";
+
+.theme-setter {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+
+  .theme-icon {
+    color: white;
+    font-size: $xxl-font;
+  }
+
+  &:hover .theme-icon {
+    color: orange !important;
+    // animation: wiggle 0.82s cubic-bezier(.36,.07,.19,.97) infinite;
+    @include wiggleAnimation();
+  }
+
+  @include lightTheme() {
+    .theme-icon {
+      color: black;
+    }
+  }
+}

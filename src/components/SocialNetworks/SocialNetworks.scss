@@ -1,0 +1,26 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.social-networks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  
+
+  .sn-icon {
+    font-size: $xxl-font;
+    color: white;
+    transition: transform 0.1s ease-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  @include lightTheme() {
+    .sn-icon {
+      color: black;
+    }
+  }
+}

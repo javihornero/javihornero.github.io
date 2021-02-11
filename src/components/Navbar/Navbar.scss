@@ -1,0 +1,94 @@
+@import "styles/variables";
+@import "styles/mixins";
+@import "styles/colors";
+
+.navbar {
+  z-index: 80;
+  position: fixed;
+  height: $navbar-height;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: saturate(150%) blur(5px);
+  background: rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  box-shadow: 0 2px 3px rgba($color: #000000, $alpha: 0.1);
+  ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    font-size: $md-font;
+
+    li {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      a {
+        color: $grey;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        &:hover {
+          color: $lighter-grey;
+        }
+
+        &.active {
+          font-weight: bold;
+          color: white;
+          position: relative;
+
+          // Bar below
+          &::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            background: white;
+            left: 0;
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include lightTheme() {
+    background: rgba(255, 255, 255, 0.3);
+
+    a {
+      color: $dark-grey;
+
+      &:hover {
+        color: black;
+      }
+
+      &.active {
+        color: black;
+
+        &::after {
+          background: black;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint-down("small") {
+  .navbar {
+    justify-content: flex-start;
+
+    ul {
+      display: none;
+    }
+  }
+}

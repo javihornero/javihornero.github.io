@@ -1,0 +1,22 @@
+@keyframes wiggle {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(-10deg);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(20deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-3px, 0, 0) rotate(-25deg);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(3px, 0, 0) rotate(25deg);
+  }
+}

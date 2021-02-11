@@ -1,0 +1,43 @@
+// theme content selector
+@mixin darkTheme() {
+  .dark-theme & {
+    @content;
+  }
+}
+
+@mixin lightTheme() {
+  .light-theme & {
+    // transition: all $theme-transition-time ease;
+    @content;
+  }
+}
+
+@mixin wiggleAnimation() {
+  animation: wiggle 0.82s 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+
+// map creation
+// 640px , 1024px, 1400px
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+// 639px , 1023px, 1399px
+$breakpoints-down: (
+  "small": "39.9375em",
+  "medium": "63.9375em",
+  "large": "87.4375em",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size )) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size )) {
+    @content;
+  }
+}

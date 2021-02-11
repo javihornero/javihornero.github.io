@@ -1,0 +1,18 @@
+@import "styles/mixins";
+
+.DrawerToggle {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 1rem;
+  cursor: pointer;
+  font-size: xx-large;
+}
+
+@include breakpoint-up("medium") {
+  .DrawerToggle {
+    display: none;
+  }
+}
